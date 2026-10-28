@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Aalu 🥔❤️</title>
+<title>For Aalu ❤️</title>
 
 <style>
 *{
@@ -18,241 +18,525 @@ html{
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#fff0f5,#ffe5ed,#fff8fa);
-    color:#4a2632;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, #fff 0%, transparent 25%),
+        linear-gradient(135deg,#fff4f8,#ffe3ec,#fff8fa);
+    color:#402631;
     overflow-x:hidden;
 }
 
-/* FLOATING HEARTS */
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    min-height:100vh;
+    padding:80px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+h1,h2{
+    font-weight:800;
+}
+
+p{
+    line-height:1.7;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 .heart{
     position:fixed;
     bottom:-30px;
     font-size:20px;
-    animation:float 7s linear infinite;
     opacity:.7;
-    z-index:0;
+    pointer-events:none;
+    animation:floatHeart linear forwards;
+    z-index:20;
 }
 
-@keyframes float{
+@keyframes floatHeart{
     0%{
         transform:translateY(0) rotate(0deg);
         opacity:0;
     }
-    20%{
-        opacity:.7;
+
+    15%{
+        opacity:.8;
     }
+
     100%{
         transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
 }
 
-/* SECTIONS */
+/* =========================
+   OPENING
+========================= */
 
-section{
-    min-height:100vh;
-    padding:70px 20px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    z-index:1;
-}
-
-.container{
-    width:100%;
-    max-width:900px;
+#opening{
     text-align:center;
+    background:
+        radial-gradient(circle at center,#fff 0%,#fff1f6 45%,#ffdce8 100%);
 }
 
-h1{
-    font-size:clamp(38px,9vw,70px);
-    margin-bottom:20px;
+.small{
+    font-size:16px;
+    letter-spacing:1px;
+    margin-bottom:18px;
+    color:#a85b73;
 }
 
-h2{
-    font-size:clamp(30px,7vw,50px);
-    margin-bottom:25px;
+.open-title{
+    font-size:clamp(42px,10vw,80px);
+    color:#b63d68;
+    margin-bottom:15px;
 }
 
-p{
+.open-sub{
     font-size:18px;
-    line-height:1.8;
+    max-width:550px;
+    margin:auto;
+    color:#704553;
 }
 
-/* BUTTON */
-
-button{
+.open-btn{
+    margin-top:35px;
+    padding:16px 30px;
     border:none;
-    padding:15px 28px;
-    border-radius:30px;
-    background:#ff6f91;
+    border-radius:50px;
+    background:#d94f7a;
     color:white;
     font-size:17px;
-    font-weight:bold;
+    font-weight:700;
     cursor:pointer;
-    box-shadow:0 8px 20px rgba(255,105,135,.3);
+    box-shadow:0 12px 30px rgba(217,79,122,.3);
     transition:.3s;
 }
 
-button:hover{
-    transform:scale(1.06);
+.open-btn:hover{
+    transform:translateY(-5px) scale(1.03);
+    box-shadow:0 18px 35px rgba(217,79,122,.4);
 }
 
-/* HERO */
+/* =========================
+   BIRTHDAY
+========================= */
 
-.hero small{
-    font-size:17px;
-    letter-spacing:2px;
+#birthday{
+    text-align:center;
 }
 
-.hero h1{
-    color:#ff4f7b;
+.badge{
+    background:#ffe0ea;
+    color:#b83e67;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
-.hero p{
+.birthday-title{
+    font-size:clamp(40px,9vw,75px);
+    color:#b63162;
     margin-bottom:30px;
 }
 
-/* PHOTOS */
+.hero-photo{
+    width:min(330px,85vw);
+    padding:12px;
+    background:white;
+    box-shadow:0 20px 45px rgba(100,30,50,.2);
+    transform:rotate(-3deg);
+    border-radius:4px;
+    transition:.4s;
+}
 
-.photo{
+.hero-photo:hover{
+    transform:rotate(0deg) scale(1.04);
+}
+
+.hero-photo img{
     width:100%;
-    max-width:420px;
-    height:480px;
-    object-fit:cover;
-    border-radius:25px;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-    margin:25px auto;
     display:block;
-    background:#ffdbe5;
 }
 
-.photo-row{
+/* =========================
+   STORY
+========================= */
+
+.story{
+    max-width:850px;
+    text-align:center;
+}
+
+.section-title{
+    font-size:clamp(32px,7vw,55px);
+    color:#b63d68;
+    margin-bottom:25px;
+}
+
+.story-text{
+    font-size:18px;
+    color:#65434f;
+    margin-bottom:35px;
+}
+
+.story-photo-row{
     display:flex;
-    gap:25px;
-    justify-content:center;
     flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
 }
 
-.photo-row .photo{
-    max-width:350px;
-    height:400px;
+.story-card{
+    width:min(300px,80vw);
+    background:white;
+    padding:10px;
+    box-shadow:0 15px 35px rgba(70,30,40,.15);
 }
 
-/* SOFT TEXT */
-
-.soft-text{
-    max-width:700px;
-    margin:0 auto 30px;
-    font-size:19px;
-    line-height:1.9;
+.story-card:nth-child(1){
+    transform:rotate(3deg);
 }
 
-.little-line{
-    font-size:20px;
-    color:#ff4f7b;
-    margin:20px 0;
-    font-weight:bold;
+.story-card:nth-child(2){
+    transform:rotate(-4deg);
 }
 
-/* PHOTO CARD */
-
-.photo-card{
-    background:rgba(255,255,255,.72);
-    padding:18px;
-    border-radius:28px;
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-    margin:35px auto;
-    max-width:450px;
+.story-card img{
+    width:100%;
+    display:block;
 }
 
-.photo-card p{
-    padding:10px 8px 4px;
-    font-size:17px;
+/* =========================
+   MEMORY GALLERY
+========================= */
+
+#gallery{
+    padding-top:100px;
+    padding-bottom:100px;
 }
 
-/* LETTER */
+.gallery-heading{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.gallery-sub{
+    text-align:center;
+    max-width:600px;
+    color:#795460;
+    margin-bottom:55px;
+}
+
+.memory-wall{
+    width:min(1000px,95vw);
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:35px 25px;
+    align-items:center;
+}
+
+.memory{
+    background:#fff;
+    padding:11px 11px 20px;
+    box-shadow:
+        0 12px 28px rgba(72,31,44,.16),
+        0 2px 4px rgba(72,31,44,.08);
+    position:relative;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.memory::after{
+    content:"♥";
+    position:absolute;
+    right:10px;
+    bottom:5px;
+    font-size:14px;
+    color:#e47798;
+}
+
+.memory:hover{
+    transform:rotate(0deg) scale(1.07) translateY(-8px) !important;
+    z-index:5;
+    box-shadow:0 25px 45px rgba(72,31,44,.25);
+}
+
+.memory img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* Different gallery positions */
+
+.m1{
+    grid-column:1 / span 4;
+    transform:rotate(-5deg);
+}
+
+.m2{
+    grid-column:5 / span 4;
+    transform:rotate(3deg);
+    margin-top:35px;
+}
+
+.m3{
+    grid-column:9 / span 4;
+    transform:rotate(-3deg);
+}
+
+.m4{
+    grid-column:2 / span 5;
+    transform:rotate(4deg);
+    margin-top:20px;
+}
+
+.m5{
+    grid-column:7 / span 4;
+    transform:rotate(-5deg);
+    margin-top:-20px;
+}
+
+.m6{
+    grid-column:1 / span 4;
+    transform:rotate(3deg);
+}
+
+.m7{
+    grid-column:5 / span 4;
+    transform:rotate(-4deg);
+    margin-top:35px;
+}
+
+.m8{
+    grid-column:9 / span 4;
+    transform:rotate(5deg);
+}
+
+.m9{
+    grid-column:4 / span 5;
+    transform:rotate(-2deg);
+    margin-top:25px;
+}
+
+/* =========================
+   MORE MEMORIES
+========================= */
+
+#more{
+    min-height:55vh;
+    text-align:center;
+    background:linear-gradient(135deg,#ffe4ed,#fff);
+}
+
+.more-title{
+    font-size:clamp(38px,8vw,65px);
+    color:#b43c67;
+}
+
+.more-heart{
+    font-size:55px;
+    margin-top:20px;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+/* =========================
+   LETTER
+========================= */
+
+#letter{
+    padding-top:100px;
+    padding-bottom:100px;
+}
+
+.letter-box{
+    width:min(850px,94vw);
+    background:#fffdfb;
+    padding:45px 35px;
+    box-shadow:0 20px 50px rgba(70,30,40,.15);
+    border-radius:6px;
+    position:relative;
+}
+
+.letter-box::before{
+    content:"💌";
+    position:absolute;
+    top:-28px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:45px;
+}
 
 .letter{
-    background:white;
-    padding:30px;
-    border-radius:25px;
-    box-shadow:0 15px 35px rgba(0,0,0,.1);
-    text-align:left;
-    max-width:750px;
-    width:100%;
-}
-
-.letter p{
     white-space:pre-line;
+    font-size:17px;
+    line-height:2;
+    color:#53343f;
 }
 
-/* FINAL */
+/* =========================
+   END
+========================= */
 
-.final{
-    background:linear-gradient(135deg,#ffcfda,#fff0f5);
+#end{
+    min-height:80vh;
+    text-align:center;
 }
 
-.final h1{
-    color:#ff4f7b;
+.end-title{
+    font-size:clamp(35px,8vw,60px);
+    color:#b43c67;
+    margin-bottom:20px;
 }
 
-/* MUSIC BUTTON */
+.end-text{
+    max-width:600px;
+    font-size:18px;
+    color:#704553;
+}
+
+.end-heart{
+    font-size:70px;
+    margin-top:30px;
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
 
 .music-btn{
     position:fixed;
-    top:20px;
-    right:20px;
-    z-index:100;
-    width:48px;
-    height:48px;
-    padding:0;
+    right:18px;
+    bottom:18px;
+    width:52px;
+    height:52px;
+    border:none;
     border-radius:50%;
-    font-size:20px;
+    background:#d94f7a;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    z-index:100;
+    box-shadow:0 8px 20px rgba(217,79,122,.35);
 }
 
-/* YOUTUBE PLAYER */
+/* =========================
+   FADE ANIMATION
+========================= */
 
-#youtube-player{
-    position:fixed;
-    width:1px;
-    height:1px;
+.fade{
     opacity:0;
-    pointer-events:none;
-    left:-10px;
-    top:-10px;
+    transform:translateY(35px);
+    transition:1s ease;
 }
 
-/* MOBILE */
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
 
-@media(max-width:600px){
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
 
     section{
-        padding:60px 18px;
+        padding:70px 15px;
     }
 
-    .photo{
-        height:430px;
+    .story-text{
+        font-size:16px;
     }
 
-    .photo-row .photo{
-        height:380px;
+    .memory-wall{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:25px 15px;
+    }
+
+    .m1,
+    .m2,
+    .m3,
+    .m4,
+    .m5,
+    .m6,
+    .m7,
+    .m8,
+    .m9{
+        grid-column:auto;
+        margin-top:0;
+    }
+
+    .m1{
+        transform:rotate(-4deg);
+    }
+
+    .m2{
+        transform:rotate(4deg);
+    }
+
+    .m3{
+        transform:rotate(-3deg);
+    }
+
+    .m4{
+        transform:rotate(3deg);
+    }
+
+    .m5{
+        transform:rotate(-5deg);
+    }
+
+    .m6{
+        transform:rotate(4deg);
+    }
+
+    .m7{
+        transform:rotate(-3deg);
+    }
+
+    .m8{
+        transform:rotate(5deg);
+    }
+
+    .m9{
+        grid-column:1 / span 2;
+        width:75%;
+        justify-self:center;
+        transform:rotate(-3deg);
+    }
+
+    .letter-box{
+        padding:35px 20px;
     }
 
     .letter{
-        padding:22px;
-    }
-
-    p{
-        font-size:17px;
-    }
-
-    .soft-text{
-        font-size:18px;
+        font-size:15px;
+        line-height:1.9;
     }
 }
 </style>
@@ -260,395 +544,386 @@ button:hover{
 
 <body>
 
-<!-- YOUTUBE MUSIC -->
+<!-- =========================
+     OPENING
+========================= -->
 
-<div id="youtube-player"></div>
+<section id="opening">
 
-<button class="music-btn" onclick="toggleMusic()" id="musicButton">
-🎵
-</button>
+    <div class="small">Aalu… don't ask why this exists 😭</div>
 
+    <h1 class="open-title">
+        A little surprise<br>
+        for you 💌
+    </h1>
 
-<!-- FLOATING HEARTS -->
+    <p class="open-sub">
+        Bas ek baar button daba de...
+        phir jo hoga uski responsibility meri nahi hai 😭❤️
+    </p>
 
-<div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
-<div class="heart" style="left:25%;animation-delay:2s;">💗</div>
-<div class="heart" style="left:45%;animation-delay:4s;">💕</div>
-<div class="heart" style="left:65%;animation-delay:1s;">💖</div>
-<div class="heart" style="left:85%;animation-delay:3s;">❤️</div>
-
-
-<!-- PAGE 1 -->
-
-<section class="hero">
-
-<div class="container">
-
-<small>A little surprise for you 👀</small>
-
-<h1>My Aalu 🥔❤️</h1>
-
-<p>
-Aalu… don't ask why this exists 😭
-<br>
-Just open it.
-</p>
-
-<button onclick="startSurprise()">
-Open Your Surprise 💌
-</button>
-
-</div>
+    <button class="open-btn" onclick="openSurprise()">
+        Open Your Surprise 💌
+    </button>
 
 </section>
 
 
-<!-- PAGE 2 -->
+<!-- =========================
+     BIRTHDAY
+========================= -->
 
-<section>
+<section id="birthday" class="fade">
 
-<div class="container">
+    <div class="badge">
+        TODAY IS YOUR DAY 🎂
+    </div>
 
-<h2>Happiest Birthday Aaluuu 🎂❤️</h2>
+    <h1 class="birthday-title">
+        Happiest Birthday Aaluuu 🎂❤️
+    </h1>
 
-<p class="soft-text">
-Aaj ka din bas tere naam. 🥹❤️
-<br>
-And honestly, I don't think I can ever properly explain
-how important you have become.
-</p>
-
-<img src="a1.jpg" class="photo">
-
-<p class="little-line">
-You deserve all the happiness in the world. 🫶
-</p>
-
-</div>
+    <div class="hero-photo">
+        <img src="a1.jpg" alt="Aalu">
+    </div>
 
 </section>
 
 
-<!-- PAGE 3 -->
+<!-- =========================
+     STORY
+========================= -->
 
-<section>
+<section id="story" class="fade">
 
-<div class="container">
+    <div class="story">
 
-<h2>Humlog... 🥹❤️</h2>
+        <h2 class="section-title">
+            From Random Talks To This 🥹
+        </h2>
 
-<p class="soft-text">
-hmko bhi ni pataa ki hm kab itne close aa gye
-aur kab tu meri itni important person ban gyi.
-Bas pata hi ni chala... aur ab tere bina baat kiye
-rehna bhi ajeeb sa lagta h. 😭❤️
-</p>
+        <p class="story-text">
+            Yrrr honestly kab socha tha ki itna kuch ho jayega.
+            Pehle toh bas normal si baat thi...
+            aur ab dekho, bina baat kiye rehna hi mushkil lagta hai 😭❤️
+        </p>
 
-<div class="photo-card">
+        <div class="story-card-row story-photo-row">
 
-<img src="a2.jpg" class="photo">
+            <div class="story-card">
+                <img src="a2.jpg" alt="Memory">
+            </div>
 
-<p>
-Some people just become important without you even realizing when it happened. ❤️
-</p>
+            <div class="story-card">
+                <img src="a3.jpg" alt="Memory">
+            </div>
 
-</div>
+        </div>
 
-<div class="photo-card">
-
-<img src="a3.jpg" class="photo">
-
-<p>
-And somehow, you're one of those people for me. 🥹🧿
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- PAGE 4 -->
+<!-- =========================
+     MEMORY GALLERY
+========================= -->
 
-<section>
+<section id="gallery" class="fade">
 
-<div class="container">
+    <div class="gallery-heading">
 
-<h2>Our Little Moments 🫶</h2>
+        <h2 class="section-title">
+            Memory Gallery 📸❤️
+        </h2>
 
-<p class="soft-text">
-Humari memories kitni random h yaar 😭😂
-Kabhi hasi, kabhi ladai, kabhi faltu ki bakchodi...
-but somehow every little thing becomes special.
-</p>
+        <p class="gallery-sub">
+            Some random pictures...
+            but somehow every picture has its own little memory attached to it. 🫶
+        </p>
 
-<div class="photo-card">
+    </div>
 
-<img src="a4.jpg" class="photo">
+    <div class="memory-wall">
 
-<p>
-Every random moment with you becomes a memory somehow. ❤️
-</p>
+        <div class="memory m1">
+            <img src="a1.jpg" alt="Memory 1">
+        </div>
 
-</div>
+        <div class="memory m2">
+            <img src="a2.jpg" alt="Memory 2">
+        </div>
 
-<div class="photo-card">
+        <div class="memory m3">
+            <img src="a3.jpg" alt="Memory 3">
+        </div>
 
-<img src="a5.jpg" class="photo">
+        <div class="memory m4">
+            <img src="a4.jpg" alt="Memory 4">
+        </div>
 
-<p>
-I hope we keep collecting moments like these forever. 🥹
-</p>
+        <div class="memory m5">
+            <img src="a5.jpg" alt="Memory 5">
+        </div>
 
-</div>
+        <div class="memory m6">
+            <img src="a6.jpg" alt="Memory 6">
+        </div>
 
-<div class="photo-card">
+        <div class="memory m7">
+            <img src="a7.jpg" alt="Memory 7">
+        </div>
 
-<img src="a6.jpg" class="photo">
+        <div class="memory m8">
+            <img src="a8.jpg" alt="Memory 8">
+        </div>
 
-<p>
-Because honestly... humlog ki bakchodi ka koi end hi nahi h 😂❤️
-</p>
+        <div class="memory m9">
+            <img src="a9.jpg" alt="Memory 9">
+        </div>
 
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PAGE 5 -->
-
-<section>
-
-<div class="container">
-
-<h2>More Memories To Go… 🫶</h2>
-
-<p class="soft-text">
-Abhi toh bohot kuch baaki h.
-Aur bohot saari memories,
-bohot saari hasi,
-bohot saari bakchodi... ❤️
-</p>
-
-<div class="photo-row">
-
-<img src="a7.jpg" class="photo">
-<img src="a8.jpg" class="photo">
-
-</div>
-
-<p class="little-line">
-This is only the beginning. 🧿❤️
-</p>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- PAGE 6 -->
+<!-- =========================
+     MORE MEMORIES
+========================= -->
 
-<section>
+<section id="more" class="fade">
 
-<div class="container">
+    <h2 class="more-title">
+        More Memories To Go… 🫶
+    </h2>
 
-<h2>Ek baat bolni thi... 💌</h2>
+    <div class="more-heart">
+        ❤️
+    </div>
 
-<div class="letter">
+</section>
 
-<p>
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<section id="letter" class="fade">
+
+    <div class="letter-box">
+
+        <h2 class="section-title">
+            Ek baat bolni thi... 💌
+        </h2>
+
+        <div class="letter">
+
 Oyeeeeee bbyy!!!!!....yawll apka toh aaj barthardayy h💃🏻...happy wala janamdinnn bby💋...yrrr kya se kyaa bn gye bruhh apannn kaha soche the ki isse toh kbhi baat ni krenge kitni rude h aur kaha ab isse bina baat kiye rha bhi ni jaara h....kitne ladaiii kitna kuch hua apne bich phir bhi you never leave me behind bbygurll😭
 
 Yrr sorry bhaiii aaj tk jitna pareshan kiye yaa kuch bhi waise hum ni krenge toh kon hi krenge...aur krenge toh teko hi jhelnaa h😏...koi nah you can do itt bachaww💋
 
-Waiseee woo apnee weird memories yaad h teko??..kaise class bunk krne ke liye teko manipulate krte the teko hum aur tum hr baar mana krti thi...woo yaad h ice cream khane ke liye rasta mehhh kitna ladai krte hue jaate h humlog...aur wo ice cream wale uncle??...woo kya bole the woo yaad h??...yawlll best memories everrr...💋🧿
+Waiseee woo apnee weird memories yaad h teko??..kaise class bunk krne ke liye teko manipulate krte the teko hum aur tum hr baar mana karti thi...woo yaad h ice cream khane ke liye rasta mehhh kitna ladai krte hue jaate h humlog...aur wo ice cream wale uncle??...woo kya bole the woo yaad h??...yawlll best memories everrr...💋🧿
 
 Bs ab kbhi bhi ye mt bolna ki chor kr jayegi tuu cozz ik tum kbhi ni jayegi lekinnn phir ni bolnaa....I m only nd only yours yrr aarohi😭💋
 
 I love you bhaiii bahut sara💋🧿😭
-</p>
 
-</div>
+        </div>
 
-</div>
-
-</section>
-
-
-<!-- PAGE 7 -->
-
-<section class="final">
-
-<div class="container">
-
-<img src="a9.jpg" class="photo">
-
-<h1>Happy Birthday Aalu! 🥔❤️</h1>
-
-<p class="soft-text">
-No matter how many memories we make,
-I know there will always be more to come. 🥹❤️
-</p>
-
-<p>
-— Your Shreya ❤️
-</p>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- YOUTUBE API -->
+<!-- =========================
+     END
+========================= -->
 
-<script src="https://www.youtube.com/iframe_api"></script>
+<section id="end" class="fade">
+
+    <h2 class="end-title">
+        Happy Birthday Once Again, Aalu ❤️
+    </h2>
+
+    <p class="end-text">
+        Bas aise hi hasti reh, pareshan karti reh,
+        aur humari bakchodi kabhi khatam mat hone dena. 🫶
+    </p>
+
+    <div class="end-heart">
+        🧿❤️
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+    🎵
+</button>
+
+<!--
+IMPORTANT:
+YouTube autoplay/hidden audio can be blocked by browsers.
+
+The button below opens your YouTube song in a new tab.
+Your exact song:
+https://youtu.be/ElZfdU54Cp8?si=dw56jKOPMQmMmTOU
+-->
 
 <script>
 
-let player;
-let isPlaying=false;
+const songURL =
+"https://youtu.be/ElZfdU54Cp8?si=dw56jKOPMQmMmTOU";
 
-function onYouTubeIframeAPIReady(){
+let musicOpened = false;
 
-    player=new YT.Player("youtube-player",{
 
-        height:"1",
-        width:"1",
+/* =========================
+   OPEN SURPRISE
+========================= */
 
-        videoId:"ElZfdU54Cp8",
+function openSurprise(){
 
-        playerVars:{
-            autoplay:0,
-            controls:0,
-            loop:1,
-            playlist:"ElZfdU54Cp8",
-            playsinline:1
-        },
+    document.getElementById("birthday")
+        .scrollIntoView({behavior:"smooth"});
 
-        events:{
+    createConfetti();
 
-            onStateChange:function(event){
+    setTimeout(()=>{
+        window.open(songURL,"_blank");
+    },800);
 
-                if(event.data===YT.PlayerState.PLAYING){
+}
 
-                    isPlaying=true;
 
-                    document.getElementById("musicButton").innerHTML="🔊";
+/* =========================
+   MUSIC BUTTON
+========================= */
 
-                }
+function toggleMusic(){
 
-                if(event.data===YT.PlayerState.PAUSED){
+    window.open(songURL,"_blank");
 
-                    isPlaying=false;
+}
 
-                    document.getElementById("musicButton").innerHTML="🎵";
 
-                }
+/* =========================
+   FLOATING HEARTS
+========================= */
 
-            }
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    const hearts=["❤️","💗","💕","💖","🩷","💞"];
+
+    heart.innerHTML=
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left=
+        Math.random()*100+"vw";
+
+    heart.style.fontSize=
+        (14+Math.random()*18)+"px";
+
+    heart.style.animationDuration=
+        (5+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+
+}
+
+setInterval(createHeart,900);
+
+
+/* =========================
+   FADE IN ON SCROLL
+========================= */
+
+const observer=
+new IntersectionObserver(
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
 
         }
 
     });
 
-}
+},
+{
+    threshold:.12
+});
 
 
-function startSurprise(){
-
-    if(player && player.playVideo){
-
-        player.playVideo();
-
-    }
-
-    createConfetti();
-
-    window.scrollTo({
-
-        top:window.innerHeight,
-
-        behavior:"smooth"
-
-    });
-
-}
+document
+.querySelectorAll(".fade")
+.forEach(el=>observer.observe(el));
 
 
-function toggleMusic(){
-
-    if(!player || !player.playVideo){
-
-        return;
-
-    }
-
-    if(isPlaying){
-
-        player.pauseVideo();
-
-        document.getElementById("musicButton").innerHTML="🎵";
-
-    }else{
-
-        player.playVideo();
-
-        document.getElementById("musicButton").innerHTML="🔊";
-
-    }
-
-}
-
-
-/* CONFETTI */
+/* =========================
+   CONFETTI
+========================= */
 
 function createConfetti(){
 
     for(let i=0;i<80;i++){
 
-        const confetti=document.createElement("div");
+        const piece=document.createElement("div");
 
-        confetti.innerHTML="❤️";
+        piece.style.position="fixed";
+        piece.style.width="8px";
+        piece.style.height="8px";
+        piece.style.background=
+            ["#ff6f91","#ffc2d1","#ffd166","#cdb4db","#90dbf4"]
+            [Math.floor(Math.random()*5)];
 
-        confetti.style.position="fixed";
-        confetti.style.left=Math.random()*100+"vw";
-        confetti.style.top="-20px";
-        confetti.style.fontSize=(10+Math.random()*15)+"px";
-        confetti.style.zIndex="999";
-        confetti.style.pointerEvents="none";
+        piece.style.left=
+            Math.random()*100+"vw";
 
-        document.body.appendChild(confetti);
+        piece.style.top="-10px";
 
-        const duration=2000+Math.random()*3000;
+        piece.style.zIndex="999";
 
-        confetti.animate(
+        piece.style.borderRadius="2px";
 
+        document.body.appendChild(piece);
+
+        const duration=
+            1500+Math.random()*2000;
+
+        piece.animate(
             [
                 {
                     transform:"translateY(0) rotate(0deg)",
                     opacity:1
                 },
-
                 {
-                    transform:"translateY(110vh) rotate(720deg)",
+                    transform:
+                        `translateY(110vh) rotate(${Math.random()*720}deg)`,
                     opacity:0
                 }
             ],
-
             {
                 duration:duration,
-                easing:"linear"
+                easing:"cubic-bezier(.2,.7,.3,1)"
             }
-
         );
 
         setTimeout(()=>{
-
-            confetti.remove();
-
+            piece.remove();
         },duration);
 
     }
