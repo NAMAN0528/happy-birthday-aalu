@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Aalu 🥔❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#fff0f5,#ffe4ec,#fff8fa);
+    color:#4a2632;
+    overflow-x:hidden;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:20px;
+    animation:float 7s linear infinite;
+    opacity:.7;
+    z-index:0;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    20%{opacity:.7;}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* GENERAL */
+
+section{
+    min-height:100vh;
+    padding:70px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    z-index:1;
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+    text-align:center;
+}
+
+h1{
+    font-size:clamp(38px,9vw,70px);
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:clamp(30px,7vw,50px);
+    margin-bottom:25px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* BUTTON */
+
+button{
+    border:none;
+    padding:15px 28px;
+    border-radius:30px;
+    background:#ff6f91;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(255,105,135,.3);
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.06);
+}
+
+/* HERO */
+
+.hero small{
+    font-size:17px;
+    letter-spacing:2px;
+}
+
+.hero h1{
+    color:#ff4f7b;
+}
+
+.hero p{
+    margin-bottom:30px;
+}
+
+/* PHOTOS */
+
+.photo{
+    width:100%;
+    max-width:420px;
+    height:480px;
+    object-fit:cover;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    margin:25px auto;
+    display:block;
+    background:#ffdbe5;
+}
+
+.photo-row{
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.photo-row .photo{
+    max-width:350px;
+    height:400px;
+}
+
+/* MEMORY CARDS */
+
+.memory-card{
+    background:rgba(255,255,255,.75);
+    padding:25px;
+    margin:20px 0;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.memory-card h3{
+    font-size:25px;
+    margin-bottom:10px;
+    color:#ff4f7b;
+}
+
+/* LETTER */
+
+.letter{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.1);
+    text-align:left;
+    max-width:750px;
+    width:100%;
+}
+
+.letter p{
+    white-space:pre-line;
+}
+
+/* FINAL */
+
+.final{
+    background:linear-gradient(135deg,#ffcfda,#fff0f5);
+}
+
+.final h1{
+    color:#ff4f7b;
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:100;
+    width:48px;
+    height:48px;
+    padding:0;
+    border-radius:50%;
+    font-size:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    section{
+        padding:60px 18px;
+    }
+
+    .photo{
+        height:430px;
+    }
+
+    .photo-row .photo{
+        height:380px;
+    }
+
+    .letter{
+        padding:22px;
+    }
+
+    p{
+        font-size:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()" id="musicButton">
+    🎵
+</button>
+
+
+<!-- FLOATING HEARTS -->
+
+<div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
+<div class="heart" style="left:25%;animation-delay:2s;">💗</div>
+<div class="heart" style="left:45%;animation-delay:4s;">💕</div>
+<div class="heart" style="left:65%;animation-delay:1s;">💖</div>
+<div class="heart" style="left:85%;animation-delay:3s;">❤️</div>
+
+
+<!-- PAGE 1 -->
+
+<section class="hero">
+
+<div class="container">
+
+<small>A little surprise for you 👀</small>
+
+<h1>My Aalu 🥔❤️</h1>
+
+<p>
+Aalu… don't ask why this exists 😭
+<br>
+Just open it.
+</p>
+
+<button onclick="startSurprise()">
+Open Your Surprise 💌
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section>
+
+<div class="container">
+
+<h2>Happiest Birthday Aaluuu 🎂❤️</h2>
+
+<img src="a1.jpg" class="photo">
+
+<p>
+Today is your dayyy 😭❤️
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section>
+
+<div class="container">
+
+<h2>Humlog ki story 🫶</h2>
+
+<img src="a2.jpg" class="photo">
+
+<p>
+hmko bhi ni pataa ki hm kab itne close aa gye
+aur kab tu meri itni important person ban gyi 😭❤️
+</p>
+
+<img src="a3.jpg" class="photo">
+
+</div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section>
+
+<div class="container">
+
+<h2>Humari Bakchodi 😂</h2>
+
+<div class="memory-card">
+
+<h3>Class Bunk 😭</h3>
+
+<p>
+Tera mana karna aur mera jid krke tujhe le jaana 😂
+</p>
+
+<img src="a4.jpg" class="photo">
+
+</div>
+
+
+<div class="memory-card">
+
+<h3>That Rainy Day 🌧️</h3>
+
+<p>
+Baarish me bheegte hue tuition jaana
+aur tera umbrella lekr bhaag jaana 😂
+</p>
+
+<img src="a5.jpg" class="photo">
+
+</div>
+
+
+<div class="memory-card">
+
+<h3>Ice Cream Fight 🍦😂</h3>
+
+<p>
+Aur woh ice cream ke liye pura road pe ladna...
+matlab humlog bhi alag hi namune h 😭
+</p>
+
+<img src="a6.jpg" class="photo">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 5 -->
+
+<section>
+
+<div class="container">
+
+<h2>More Memories To Go… 🫶</h2>
+
+<div class="photo-row">
+
+<img src="a7.jpg" class="photo">
+<img src="a8.jpg" class="photo">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 6 -->
+
+<section>
+
+<div class="container">
+
+<h2>Ek baat bolni thi... 💌</h2>
+
+<div class="letter">
+
+<p>
+Aaluuu 😭❤️
+
+hmko bhi ni pataa ki hm kab itne close aa gye aur kab tu meri itni important person ban gyi. Bas ab dekho, tere bina koi bhi plan complete hi ni hota 😂
+
+Humlog ki memories bhi kya hi h yaar 😭 class bunk krne ke liye tera mana karna aur mera jid krke tujhe le jaana, baarish me bheegte hue tuition jaana aur tera umbrella lekr bhaag jaana 😂 aur woh ice cream ke liye pura road pe ladna... matlab humlog bhi alag hi namune h.
+
+hmko ni pataa ki hm ye sab kabhi properly bolti bhi hu ya nahi, but mujhe tera sab kuch pasand h. Aur sabse zyada ye ki tu humpe itna trust krti h. Hum sahi ho ya galat, tu bina kuch jaane kisi ki baat sunkr humko galat ni samajhti. Ye cheez genuinely bohot matter krti h mere liye. 🥹❤️
+
+Aur haan, ek request h madam 😭 woh kabhi "hum chhod ke chale jayenge" type baatein mat kiya karo. Bilkul pasand ni h humko. Hum tumhare hi h aur tumhare hi rahenge, samjhi? 😤❤️
+
+Bas aise hi rehna, mere saath bakchodi karte rehna, faltu ke plans banate rehna, mere saath ladte rehna aur phir khud hi normal bhi ho jaana 😂
+
+Happy Birthday Aaluu 🥔❤️ Abhi toh aur bohot saari bakchodi aur memories pending h humari. 🫶
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 7 -->
+
+<section class="final">
+
+<div class="container">
+
+<img src="a9.jpg" class="photo">
+
+<h1>Happy Birthday Aalu! 🥔❤️</h1>
+
+<p>
+Abhi toh bohot saari memories baaki hain. 🫶
+</p>
+
+<br>
+
+<p>
+— Your Shreya ❤️
+</p>
+
+</div>
+
+</section>
+
+
+<script>
+
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
+
+function startSurprise(){
+
+    music.play().catch(()=>{});
+
+    window.scrollTo({
+        top:window.innerHeight,
+        behavior:"smooth"
+    });
+
+}
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+        musicButton.innerHTML="🔊";
+
+    }else{
+
+        music.pause();
+        musicButton.innerHTML="🎵";
+
+    }
+
+}
+
+
+/* CONFETTI */
+
+function createConfetti(){
+
+    for(let i=0;i<80;i++){
+
+        const confetti=document.createElement("div");
+
+        confetti.innerHTML="❤️";
+
+        confetti.style.position="fixed";
+        confetti.style.left=Math.random()*100+"vw";
+        confetti.style.top="-20px";
+        confetti.style.fontSize=(10+Math.random()*15)+"px";
+        confetti.style.zIndex="999";
+        confetti.style.pointerEvents="none";
+
+        document.body.appendChild(confetti);
+
+        const duration=2000+Math.random()*3000;
+
+        confetti.animate(
+            [
+                {transform:"translateY(0) rotate(0deg)",opacity:1},
+                {transform:"translateY(110vh) rotate(720deg)",opacity:0}
+            ],
+            {
+                duration:duration,
+                easing:"linear"
+            }
+        );
+
+        setTimeout(()=>{
+            confetti.remove();
+        },duration);
+    }
+
+}
+
+window.addEventListener("load",()=>{
+    setTimeout(createConfetti,800);
+});
+
+</script>
+
+</body>
+</html>
