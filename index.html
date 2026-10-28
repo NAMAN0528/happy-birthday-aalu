@@ -7,6 +7,7 @@
 <title>For Aalu ❤️</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -18,9 +19,9 @@ html{
 }
 
 body{
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family:"Segoe UI",Arial,sans-serif;
     background:
-        radial-gradient(circle at 20% 10%, #fff 0%, transparent 25%),
+        radial-gradient(circle at 20% 10%,#fff 0%,transparent 25%),
         linear-gradient(135deg,#fff4f8,#ffe3ec,#fff8fa);
     color:#402631;
     overflow-x:hidden;
@@ -48,6 +49,7 @@ p{
     line-height:1.7;
 }
 
+
 /* =========================
    FLOATING HEARTS
 ========================= */
@@ -63,6 +65,7 @@ p{
 }
 
 @keyframes floatHeart{
+
     0%{
         transform:translateY(0) rotate(0deg);
         opacity:0;
@@ -76,7 +79,9 @@ p{
         transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
+
 }
+
 
 /* =========================
    OPENING
@@ -84,6 +89,7 @@ p{
 
 #opening{
     text-align:center;
+
     background:
         radial-gradient(circle at center,#fff 0%,#fff1f6 45%,#ffdce8 100%);
 }
@@ -118,7 +124,9 @@ p{
     font-size:17px;
     font-weight:700;
     cursor:pointer;
+
     box-shadow:0 12px 30px rgba(217,79,122,.3);
+
     transition:.3s;
 }
 
@@ -126,6 +134,7 @@ p{
     transform:translateY(-5px) scale(1.03);
     box-shadow:0 18px 35px rgba(217,79,122,.4);
 }
+
 
 /* =========================
    BIRTHDAY
@@ -154,9 +163,13 @@ p{
     width:min(330px,85vw);
     padding:12px;
     background:white;
+
     box-shadow:0 20px 45px rgba(100,30,50,.2);
+
     transform:rotate(-3deg);
+
     border-radius:4px;
+
     transition:.4s;
 }
 
@@ -168,6 +181,7 @@ p{
     width:100%;
     display:block;
 }
+
 
 /* =========================
    STORY
@@ -201,6 +215,7 @@ p{
     width:min(300px,80vw);
     background:white;
     padding:10px;
+
     box-shadow:0 15px 35px rgba(70,30,40,.15);
 }
 
@@ -216,6 +231,7 @@ p{
     width:100%;
     display:block;
 }
+
 
 /* =========================
    MEMORY GALLERY
@@ -240,19 +256,27 @@ p{
 
 .memory-wall{
     width:min(1000px,95vw);
+
     display:grid;
+
     grid-template-columns:repeat(12,1fr);
+
     gap:35px 25px;
+
     align-items:center;
 }
 
 .memory{
     background:#fff;
+
     padding:11px 11px 20px;
+
     box-shadow:
         0 12px 28px rgba(72,31,44,.16),
         0 2px 4px rgba(72,31,44,.08);
+
     position:relative;
+
     transition:
         transform .35s ease,
         box-shadow .35s ease;
@@ -260,27 +284,38 @@ p{
 
 .memory::after{
     content:"♥";
+
     position:absolute;
+
     right:10px;
     bottom:5px;
+
     font-size:14px;
+
     color:#e47798;
 }
 
 .memory:hover{
     transform:rotate(0deg) scale(1.07) translateY(-8px) !important;
+
     z-index:5;
+
     box-shadow:0 25px 45px rgba(72,31,44,.25);
 }
 
 .memory img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     display:block;
 }
 
-/* Different gallery positions */
+
+/* =========================
+   GALLERY POSITIONS
+========================= */
 
 .m1{
     grid-column:1 / span 4;
@@ -332,14 +367,18 @@ p{
     margin-top:25px;
 }
 
+
 /* =========================
    MORE MEMORIES
 ========================= */
 
 #more{
     min-height:55vh;
+
     text-align:center;
-    background:linear-gradient(135deg,#ffe4ed,#fff);
+
+    background:
+        linear-gradient(135deg,#ffe4ed,#fff);
 }
 
 .more-title{
@@ -350,10 +389,12 @@ p{
 .more-heart{
     font-size:55px;
     margin-top:20px;
+
     animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
+
     0%,100%{
         transform:scale(1);
     }
@@ -361,7 +402,9 @@ p{
     50%{
         transform:scale(1.15);
     }
+
 }
+
 
 /* =========================
    LETTER
@@ -374,28 +417,42 @@ p{
 
 .letter-box{
     width:min(850px,94vw);
+
     background:#fffdfb;
+
     padding:45px 35px;
-    box-shadow:0 20px 50px rgba(70,30,40,.15);
+
+    box-shadow:
+        0 20px 50px rgba(70,30,40,.15);
+
     border-radius:6px;
+
     position:relative;
 }
 
 .letter-box::before{
     content:"💌";
+
     position:absolute;
+
     top:-28px;
     left:50%;
+
     transform:translateX(-50%);
+
     font-size:45px;
 }
 
 .letter{
     white-space:pre-line;
+
     font-size:17px;
+
     line-height:2;
+
     color:#53343f;
 }
+
 
 /* =========================
    END
@@ -403,25 +460,32 @@ p{
 
 #end{
     min-height:80vh;
+
     text-align:center;
 }
 
 .end-title{
     font-size:clamp(35px,8vw,60px);
+
     color:#b43c67;
+
     margin-bottom:20px;
 }
 
 .end-text{
     max-width:600px;
+
     font-size:18px;
+
     color:#704553;
 }
 
 .end-heart{
     font-size:70px;
+
     margin-top:30px;
 }
+
 
 /* =========================
    MUSIC BUTTON
@@ -429,19 +493,51 @@ p{
 
 .music-btn{
     position:fixed;
+
     right:18px;
     bottom:18px;
+
     width:52px;
     height:52px;
+
     border:none;
+
     border-radius:50%;
+
     background:#d94f7a;
+
     color:white;
+
     font-size:22px;
+
     cursor:pointer;
+
     z-index:100;
-    box-shadow:0 8px 20px rgba(217,79,122,.35);
+
+    box-shadow:
+        0 8px 20px rgba(217,79,122,.35);
 }
+
+
+/* =========================
+   HIDDEN YOUTUBE PLAYER
+========================= */
+
+#youtube-player{
+
+    position:fixed;
+
+    width:1px;
+    height:1px;
+
+    left:-100px;
+    top:-100px;
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
 
 /* =========================
    FADE ANIMATION
@@ -449,14 +545,18 @@ p{
 
 .fade{
     opacity:0;
+
     transform:translateY(35px);
+
     transition:1s ease;
 }
 
 .fade.show{
     opacity:1;
+
     transform:translateY(0);
 }
+
 
 /* =========================
    MOBILE
@@ -473,8 +573,11 @@ p{
     }
 
     .memory-wall{
+
         display:grid;
+
         grid-template-columns:repeat(2,1fr);
+
         gap:25px 15px;
     }
 
@@ -487,7 +590,9 @@ p{
     .m7,
     .m8,
     .m9{
+
         grid-column:auto;
+
         margin-top:0;
     }
 
@@ -524,9 +629,13 @@ p{
     }
 
     .m9{
+
         grid-column:1 / span 2;
+
         width:75%;
+
         justify-self:center;
+
         transform:rotate(-3deg);
     }
 
@@ -536,13 +645,26 @@ p{
 
     .letter{
         font-size:15px;
+
         line-height:1.9;
     }
+
 }
+
 </style>
 </head>
 
 <body>
+
+
+<!-- =========================
+     HIDDEN YOUTUBE PLAYER
+========================= -->
+
+<div id="youtube-player"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
 
 <!-- =========================
      OPENING
@@ -550,7 +672,9 @@ p{
 
 <section id="opening">
 
-    <div class="small">Aalu… don't ask why this exists 😭</div>
+    <div class="small">
+        Aalu… don't ask why this exists 😭
+    </div>
 
     <h1 class="open-title">
         A little surprise<br>
@@ -562,8 +686,12 @@ p{
         phir jo hoga uski responsibility meri nahi hai 😭❤️
     </p>
 
-    <button class="open-btn" onclick="openSurprise()">
+    <button
+        class="open-btn"
+        onclick="openSurprise()">
+
         Open Your Surprise 💌
+
     </button>
 
 </section>
@@ -584,7 +712,11 @@ p{
     </h1>
 
     <div class="hero-photo">
-        <img src="a1.jpg" alt="Aalu">
+
+        <img
+            src="a1.jpg"
+            alt="Aalu">
+
     </div>
 
 </section>
@@ -603,19 +735,29 @@ p{
         </h2>
 
         <p class="story-text">
+
             Yrrr honestly kab socha tha ki itna kuch ho jayega.
             Pehle toh bas normal si baat thi...
             aur ab dekho, bina baat kiye rehna hi mushkil lagta hai 😭❤️
+
         </p>
 
         <div class="story-card-row story-photo-row">
 
             <div class="story-card">
-                <img src="a2.jpg" alt="Memory">
+
+                <img
+                    src="a2.jpg"
+                    alt="Memory">
+
             </div>
 
             <div class="story-card">
-                <img src="a3.jpg" alt="Memory">
+
+                <img
+                    src="a3.jpg"
+                    alt="Memory">
+
             </div>
 
         </div>
@@ -638,48 +780,95 @@ p{
         </h2>
 
         <p class="gallery-sub">
+
             Some random pictures...
             but somehow every picture has its own little memory attached to it. 🫶
+
         </p>
 
     </div>
 
+
     <div class="memory-wall">
 
         <div class="memory m1">
-            <img src="a1.jpg" alt="Memory 1">
+
+            <img
+                src="a1.jpg"
+                alt="Memory 1">
+
         </div>
+
 
         <div class="memory m2">
-            <img src="a2.jpg" alt="Memory 2">
+
+            <img
+                src="a2.jpg"
+                alt="Memory 2">
+
         </div>
+
 
         <div class="memory m3">
-            <img src="a3.jpg" alt="Memory 3">
+
+            <img
+                src="a3.jpg"
+                alt="Memory 3">
+
         </div>
+
 
         <div class="memory m4">
-            <img src="a4.jpg" alt="Memory 4">
+
+            <img
+                src="a4.jpg"
+                alt="Memory 4">
+
         </div>
+
 
         <div class="memory m5">
-            <img src="a5.jpg" alt="Memory 5">
+
+            <img
+                src="a5.jpg"
+                alt="Memory 5">
+
         </div>
+
 
         <div class="memory m6">
-            <img src="a6.jpg" alt="Memory 6">
+
+            <img
+                src="a6.jpg"
+                alt="Memory 6">
+
         </div>
+
 
         <div class="memory m7">
-            <img src="a7.jpg" alt="Memory 7">
+
+            <img
+                src="a7.jpg"
+                alt="Memory 7">
+
         </div>
+
 
         <div class="memory m8">
-            <img src="a8.jpg" alt="Memory 8">
+
+            <img
+                src="a8.jpg"
+                alt="Memory 8">
+
         </div>
 
+
         <div class="memory m9">
-            <img src="a9.jpg" alt="Memory 9">
+
+            <img
+                src="a9.jpg"
+                alt="Memory 9">
+
         </div>
 
     </div>
@@ -716,6 +905,7 @@ p{
             Ek baat bolni thi... 💌
         </h2>
 
+
         <div class="letter">
 
 Oyeeeeee bbyy!!!!!....yawll apka toh aaj barthardayy h💃🏻...happy wala janamdinnn bby💋...yrrr kya se kyaa bn gye bruhh apannn kaha soche the ki isse toh kbhi baat ni krenge kitni rude h aur kaha ab isse bina baat kiye rha bhi ni jaara h....kitne ladaiii kitna kuch hua apne bich phir bhi you never leave me behind bbygurll😭
@@ -746,8 +936,10 @@ I love you bhaiii bahut sara💋🧿😭
     </h2>
 
     <p class="end-text">
+
         Bas aise hi hasti reh, pareshan karti reh,
         aur humari bakchodi kabhi khatam mat hone dena. 🫶
+
     </p>
 
     <div class="end-heart">
@@ -757,27 +949,122 @@ I love you bhaiii bahut sara💋🧿😭
 </section>
 
 
-<!-- MUSIC -->
+<!-- =========================
+     MUSIC BUTTON
+========================= -->
 
-<button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+<button
+    class="music-btn"
+    onclick="toggleMusic()"
+    id="musicBtn">
+
     🎵
+
 </button>
 
-<!--
-IMPORTANT:
-YouTube autoplay/hidden audio can be blocked by browsers.
-
-The button below opens your YouTube song in a new tab.
-Your exact song:
-https://youtu.be/ElZfdU54Cp8?si=dw56jKOPMQmMmTOU
--->
 
 <script>
 
-const songURL =
-"https://youtu.be/ElZfdU54Cp8?si=dw56jKOPMQmMmTOU";
+/* ==================================================
+   YOUTUBE MUSIC
+   Video: Apna Bana Le
+   YouTube ID: ElZfdU54Cp8
+================================================== */
 
-let musicOpened = false;
+let player = null;
+
+let youtubeReady = false;
+
+
+/* =========================
+   CREATE YOUTUBE PLAYER
+========================= */
+
+function onYouTubeIframeAPIReady(){
+
+    player = new YT.Player(
+        "youtube-player",
+        {
+
+            width:"1",
+
+            height:"1",
+
+            videoId:"ElZfdU54Cp8",
+
+            playerVars:{
+
+                autoplay:0,
+
+                controls:0,
+
+                playsinline:1,
+
+                rel:0,
+
+                modestbranding:1
+
+            },
+
+            events:{
+
+                onReady:function(){
+
+                    youtubeReady = true;
+
+                    player.setVolume(70);
+
+                },
+
+                onStateChange:function(event){
+
+                    if(
+                        event.data ===
+                        YT.PlayerState.PLAYING
+                    ){
+
+                        document
+                        .getElementById("musicBtn")
+                        .innerHTML="🎵";
+
+                    }
+
+                    if(
+                        event.data ===
+                        YT.PlayerState.PAUSED
+                    ){
+
+                        document
+                        .getElementById("musicBtn")
+                        .innerHTML="▶️";
+
+                    }
+
+                },
+
+                onError:function(event){
+
+                    console.log(
+                        "YouTube player error:",
+                        event.data
+                    );
+
+                },
+
+                onAutoplayBlocked:function(){
+
+                    console.log(
+                        "Browser blocked YouTube autoplay."
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+}
 
 
 /* =========================
@@ -786,14 +1073,44 @@ let musicOpened = false;
 
 function openSurprise(){
 
-    document.getElementById("birthday")
-        .scrollIntoView({behavior:"smooth"});
+    /*
+       This is called directly by the user's
+       button tap.
+
+       We attempt to start the YouTube
+       music here.
+    */
+
+    if(
+        youtubeReady &&
+        player
+    ){
+
+        player.unMute();
+
+        player.setVolume(70);
+
+        player.playVideo();
+
+    }
+
+
+    /*
+       Scroll to birthday section
+    */
+
+    document
+        .getElementById("birthday")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+
+    /*
+       Birthday confetti
+    */
 
     createConfetti();
-
-    setTimeout(()=>{
-        window.open(songURL,"_blank");
-    },800);
 
 }
 
@@ -804,7 +1121,46 @@ function openSurprise(){
 
 function toggleMusic(){
 
-    window.open(songURL,"_blank");
+    if(
+        !youtubeReady ||
+        !player
+    ){
+
+        return;
+
+    }
+
+
+    const state =
+        player.getPlayerState();
+
+
+    if(
+        state ===
+        YT.PlayerState.PLAYING
+    ){
+
+        player.pauseVideo();
+
+        document
+            .getElementById("musicBtn")
+            .innerHTML="▶️";
+
+    }
+
+    else{
+
+        player.unMute();
+
+        player.setVolume(70);
+
+        player.playVideo();
+
+        document
+            .getElementById("musicBtn")
+            .innerHTML="🎵";
+
+    }
 
 }
 
@@ -815,62 +1171,102 @@ function toggleMusic(){
 
 function createHeart(){
 
-    const heart=document.createElement("div");
+    const heart =
+        document.createElement("div");
 
     heart.className="heart";
 
-    const hearts=["❤️","💗","💕","💖","🩷","💞"];
 
-    heart.innerHTML=
-        hearts[Math.floor(Math.random()*hearts.length)];
+    const hearts=[
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "🩷",
+        "💞"
+    ];
 
-    heart.style.left=
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random()*hearts.length
+            )
+        ];
+
+
+    heart.style.left =
         Math.random()*100+"vw";
 
-    heart.style.fontSize=
+
+    heart.style.fontSize =
         (14+Math.random()*18)+"px";
 
-    heart.style.animationDuration=
+
+    heart.style.animationDuration =
         (5+Math.random()*5)+"s";
 
-    document.body.appendChild(heart);
 
-    setTimeout(()=>{
-        heart.remove();
-    },10000);
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        ()=>{
+            heart.remove();
+        },
+        10000
+    );
 
 }
 
-setInterval(createHeart,900);
+
+setInterval(
+    createHeart,
+    900
+);
 
 
 /* =========================
    FADE IN ON SCROLL
 ========================= */
 
-const observer=
-new IntersectionObserver(
-(entries)=>{
+const observer =
+    new IntersectionObserver(
 
-    entries.forEach(entry=>{
+        (entries)=>{
 
-        if(entry.isIntersecting){
+            entries.forEach(
+                entry=>{
 
-            entry.target.classList.add("show");
+                    if(
+                        entry.isIntersecting
+                    ){
 
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold:.12
         }
 
-    });
-
-},
-{
-    threshold:.12
-});
+    );
 
 
 document
-.querySelectorAll(".fade")
-.forEach(el=>observer.observe(el));
+    .querySelectorAll(".fade")
+    .forEach(
+        el=>observer.observe(el)
+    );
 
 
 /* =========================
@@ -879,52 +1275,105 @@ document
 
 function createConfetti(){
 
-    for(let i=0;i<80;i++){
+    for(
+        let i=0;
+        i<80;
+        i++
+    ){
 
-        const piece=document.createElement("div");
+        const piece =
+            document.createElement("div");
+
 
         piece.style.position="fixed";
-        piece.style.width="8px";
-        piece.style.height="8px";
-        piece.style.background=
-            ["#ff6f91","#ffc2d1","#ffd166","#cdb4db","#90dbf4"]
-            [Math.floor(Math.random()*5)];
 
-        piece.style.left=
+        piece.style.width="8px";
+
+        piece.style.height="8px";
+
+
+        piece.style.background=
+
+            [
+                "#ff6f91",
+                "#ffc2d1",
+                "#ffd166",
+                "#cdb4db",
+                "#90dbf4"
+            ]
+            [
+                Math.floor(
+                    Math.random()*5
+                )
+            ];
+
+
+        piece.style.left =
             Math.random()*100+"vw";
+
 
         piece.style.top="-10px";
 
+
         piece.style.zIndex="999";
+
 
         piece.style.borderRadius="2px";
 
-        document.body.appendChild(piece);
 
-        const duration=
-            1500+Math.random()*2000;
-
-        piece.animate(
-            [
-                {
-                    transform:"translateY(0) rotate(0deg)",
-                    opacity:1
-                },
-                {
-                    transform:
-                        `translateY(110vh) rotate(${Math.random()*720}deg)`,
-                    opacity:0
-                }
-            ],
-            {
-                duration:duration,
-                easing:"cubic-bezier(.2,.7,.3,1)"
-            }
+        document.body.appendChild(
+            piece
         );
 
-        setTimeout(()=>{
-            piece.remove();
-        },duration);
+
+        const duration =
+            1500+
+            Math.random()*2000;
+
+
+        piece.animate(
+
+            [
+
+                {
+                    transform:
+                        "translateY(0) rotate(0deg)",
+
+                    opacity:1
+                },
+
+                {
+
+                    transform:
+                        `translateY(110vh) rotate(${Math.random()*720}deg)`,
+
+                    opacity:0
+
+                }
+
+            ],
+
+            {
+
+                duration:duration,
+
+                easing:
+                    "cubic-bezier(.2,.7,.3,1)"
+
+            }
+
+        );
+
+
+        setTimeout(
+
+            ()=>{
+                piece.remove();
+            },
+
+            duration
+
+        );
 
     }
 
