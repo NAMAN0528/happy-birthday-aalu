@@ -520,26 +520,6 @@ p{
 
 
 /* =========================
-   HIDDEN YOUTUBE PLAYER
-========================= */
-
-#youtube-player{
-
-    position:fixed;
-
-    width:1px;
-    height:1px;
-
-    left:-100px;
-    top:-100px;
-
-    opacity:0;
-
-    pointer-events:none;
-}
-
-
-/* =========================
    FADE ANIMATION
 ========================= */
 
@@ -658,12 +638,12 @@ p{
 
 
 <!-- =========================
-     HIDDEN YOUTUBE PLAYER
+     LOCAL MUSIC
 ========================= -->
 
-<div id="youtube-player"></div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
+<audio id="birthdayMusic" preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 
 <!-- =========================
@@ -966,105 +946,15 @@ I love you bhaiii bahut sara💋🧿😭
 <script>
 
 /* ==================================================
-   YOUTUBE MUSIC
-   Video: Apna Bana Le
-   YouTube ID: ElZfdU54Cp8
+   LOCAL MUSIC
+   File: music.mp3
 ================================================== */
 
-let player = null;
+const music =
+    document.getElementById("birthdayMusic");
 
-let youtubeReady = false;
-
-
-/* =========================
-   CREATE YOUTUBE PLAYER
-========================= */
-
-function onYouTubeIframeAPIReady(){
-
-    player = new YT.Player(
-        "youtube-player",
-        {
-
-            width:"1",
-
-            height:"1",
-
-            videoId:"ElZfdU54Cp8",
-
-            playerVars:{
-
-                autoplay:0,
-
-                controls:0,
-
-                playsinline:1,
-
-                rel:0,
-
-                modestbranding:1
-
-            },
-
-            events:{
-
-                onReady:function(){
-
-                    youtubeReady = true;
-
-                    player.setVolume(70);
-
-                },
-
-                onStateChange:function(event){
-
-                    if(
-                        event.data ===
-                        YT.PlayerState.PLAYING
-                    ){
-
-                        document
-                        .getElementById("musicBtn")
-                        .innerHTML="🎵";
-
-                    }
-
-                    if(
-                        event.data ===
-                        YT.PlayerState.PAUSED
-                    ){
-
-                        document
-                        .getElementById("musicBtn")
-                        .innerHTML="▶️";
-
-                    }
-
-                },
-
-                onError:function(event){
-
-                    console.log(
-                        "YouTube player error:",
-                        event.data
-                    );
-
-                },
-
-                onAutoplayBlocked:function(){
-
-                    console.log(
-                        "Browser blocked YouTube autoplay."
-                    );
-
-                }
-
-            }
-
-        }
-    );
-
-}
+const musicBtn =
+    document.getElementById("musicBtn");
 
 
 /* =========================
@@ -1074,29 +964,30 @@ function onYouTubeIframeAPIReady(){
 function openSurprise(){
 
     /*
-       This is called directly by the user's
-       button tap.
-
-       We attempt to start the YouTube
-       music here.
+       Start music directly from
+       the user's button tap.
     */
 
-    if(
-        youtubeReady &&
-        player
-    ){
+    music.volume = 0.7;
 
-        player.unMute();
+    music.play()
+        .then(()=>{
 
-        player.setVolume(70);
+            musicBtn.innerHTML="🎵";
 
-        player.playVideo();
+        })
+        .catch((error)=>{
 
-    }
+            console.log(
+                "Music could not start:",
+                error
+            );
+
+        });
 
 
     /*
-       Scroll to birthday section
+       Continue into the surprise
     */
 
     document
@@ -1121,48 +1012,50 @@ function openSurprise(){
 
 function toggleMusic(){
 
-    if(
-        !youtubeReady ||
-        !player
-    ){
+    if(music.paused){
 
-        return;
+        music.volume = 0.7;
 
-    }
+        music.play()
+            .then(()=>{
 
+                musicBtn.innerHTML="🎵";
 
-    const state =
-        player.getPlayerState();
+            })
+            .catch((error)=>{
 
+                console.log(
+                    "Music could not play:",
+                    error
+                );
 
-    if(
-        state ===
-        YT.PlayerState.PLAYING
-    ){
-
-        player.pauseVideo();
-
-        document
-            .getElementById("musicBtn")
-            .innerHTML="▶️";
+            });
 
     }
 
     else{
 
-        player.unMute();
+        music.pause();
 
-        player.setVolume(70);
-
-        player.playVideo();
-
-        document
-            .getElementById("musicBtn")
-            .innerHTML="🎵";
+        musicBtn.innerHTML="▶️";
 
     }
 
 }
+
+
+/* =========================
+   UPDATE BUTTON WHEN SONG ENDS
+========================= */
+
+music.addEventListener(
+    "ended",
+    function(){
+
+        musicBtn.innerHTML="▶️";
+
+    }
+);
 
 
 /* =========================
