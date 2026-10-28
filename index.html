@@ -24,8 +24,6 @@ body{
     overflow-x:hidden;
 }
 
-/* FLOATING HEARTS */
-
 .heart{
     position:fixed;
     bottom:-30px;
@@ -46,8 +44,6 @@ body{
         opacity:0;
     }
 }
-
-/* GENERAL */
 
 section{
     min-height:100vh;
@@ -81,8 +77,6 @@ p{
     line-height:1.8;
 }
 
-/* BUTTON */
-
 button{
     border:none;
     padding:15px 28px;
@@ -100,8 +94,6 @@ button:hover{
     transform:scale(1.06);
 }
 
-/* HERO */
-
 .hero small{
     font-size:17px;
     letter-spacing:2px;
@@ -114,8 +106,6 @@ button:hover{
 .hero p{
     margin-bottom:30px;
 }
-
-/* PHOTOS */
 
 .photo{
     width:100%;
@@ -141,8 +131,6 @@ button:hover{
     height:400px;
 }
 
-/* MEMORY CARDS */
-
 .memory-card{
     background:rgba(255,255,255,.75);
     padding:25px;
@@ -156,8 +144,6 @@ button:hover{
     margin-bottom:10px;
     color:#ff4f7b;
 }
-
-/* LETTER */
 
 .letter{
     background:white;
@@ -173,8 +159,6 @@ button:hover{
     white-space:pre-line;
 }
 
-/* FINAL */
-
 .final{
     background:linear-gradient(135deg,#ffcfda,#fff0f5);
 }
@@ -182,8 +166,6 @@ button:hover{
 .final h1{
     color:#ff4f7b;
 }
-
-/* MUSIC BUTTON */
 
 .music-btn{
     position:fixed;
@@ -197,7 +179,16 @@ button:hover{
     font-size:20px;
 }
 
-/* MOBILE */
+/* Hidden YouTube player */
+#youtube-player{
+    position:fixed;
+    width:1px;
+    height:1px;
+    opacity:0;
+    pointer-events:none;
+    left:-10px;
+    top:-10px;
+}
 
 @media(max-width:600px){
 
@@ -226,11 +217,8 @@ button:hover{
 
 <body>
 
-<!-- MUSIC -->
-
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+<!-- YOUTUBE MUSIC PLAYER -->
+<div id="youtube-player"></div>
 
 <button class="music-btn" onclick="toggleMusic()" id="musicButton">
     🎵
@@ -439,33 +427,97 @@ Abhi toh bohot saari memories baaki hain. 🫶
 </section>
 
 
+<!-- YOUTUBE API -->
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <script>
 
-const music = document.getElementById("music");
-const musicButton = document.getElementById("musicButton");
+let player;
+let isPlaying = false;
 
-function startSurprise(){
+function onYouTubeIframeAPIReady(){
 
-    music.play().catch(()=>{});
+    player = new YT.Player('youtube-player',{
 
-    window.scrollTo({
-        top:window.innerHeight,
-        behavior:"smooth"
+        height:'1',
+        width:'1',
+
+        videoId:'ElZfdU54Cp8',
+
+        playerVars:{
+            autoplay:0,
+            controls:0,
+            loop:1,
+            playlist:'ElZfdU54Cp8',
+            playsinline:1
+        },
+
+        events:{
+            onStateChange:function(event){
+
+                if(event.data === YT.PlayerState.PLAYING){
+
+                    isPlaying = true;
+                    document.getElementById("musicButton").innerHTML="🔊";
+
+                }
+
+                if(event.data === YT.PlayerState.PAUSED){
+
+                    isPlaying = false;
+                    document.getElementById("musicButton").innerHTML="🎵";
+
+                }
+
+            }
+        }
+
     });
 
 }
 
+
+function startSurprise(){
+
+    if(player && player.playVideo){
+
+        player.playVideo();
+
+    }
+
+    createConfetti();
+
+    window.scrollTo({
+
+        top:window.innerHeight,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
 function toggleMusic(){
 
-    if(music.paused){
+    if(!player || !player.playVideo){
 
-        music.play();
-        musicButton.innerHTML="🔊";
+        return;
+
+    }
+
+    if(isPlaying){
+
+        player.pauseVideo();
+
+        document.getElementById("musicButton").innerHTML="🎵";
 
     }else{
 
-        music.pause();
-        musicButton.innerHTML="🎵";
+        player.playVideo();
+
+        document.getElementById("musicButton").innerHTML="🔊";
 
     }
 
@@ -494,26 +546,35 @@ function createConfetti(){
         const duration=2000+Math.random()*3000;
 
         confetti.animate(
+
             [
-                {transform:"translateY(0) rotate(0deg)",opacity:1},
-                {transform:"translateY(110vh) rotate(720deg)",opacity:0}
+                {
+                    transform:"translateY(0) rotate(0deg)",
+                    opacity:1
+                },
+
+                {
+                    transform:"translateY(110vh) rotate(720deg)",
+                    opacity:0
+                }
             ],
+
             {
                 duration:duration,
                 easing:"linear"
             }
+
         );
 
         setTimeout(()=>{
+
             confetti.remove();
+
         },duration);
+
     }
 
 }
-
-window.addEventListener("load",()=>{
-    setTimeout(createConfetti,800);
-});
 
 </script>
 
